@@ -92,8 +92,11 @@ public class IpcontrolController extends BaseController {
 		 String type = request.getParameter("type");
 		 List<V3xIpcontrol> ipcontrols = null;
 		 
+		 // 2017-5-24 诚佰公司 添加授权对象过滤
+		 String memberIds = request.getParameter("memberIds");
+		 
 		 if("search".equals(request.getParameter("search"))){
-				ipcontrols = ipcontrolManager.findIpcontrolBy(name, type, accountId, accountId2);
+				ipcontrols = ipcontrolManager.findIpcontrolBy(name, type, accountId, accountId2, memberIds);
 		 } else {
 			 if(Strings.isNotBlank(accountId)){
 				 ipcontrols = ipcontrolManager.findIpcontrolByAccount(Long.parseLong(accountId));

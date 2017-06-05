@@ -189,7 +189,7 @@ public class IpcontrolManagerImpl extends BaseDao<V3xIpcontrol> implements Ipcon
 		appLogManager.insertLog(user, AppLogAction.Ipcontrol_Update, user.getName(), type, ipcontrol.getName());
 	}
 
-	public List<V3xIpcontrol> findIpcontrolBy(String name, String type, String accountId, String accountId2){
+	public List<V3xIpcontrol> findIpcontrolBy(String name, String type, String accountId, String accountId2, String memberIds){
 			Map<String, Object> param = new HashMap<String, Object>();
 			String hql = "select v from " + V3xIpcontrol.class.getName() + " as v where 1=1 ";
 			if(Strings.isNotBlank(name)){
@@ -200,6 +200,12 @@ public class IpcontrolManagerImpl extends BaseDao<V3xIpcontrol> implements Ipcon
 				hql += " and v.type=:type";
 				param.put("type", Integer.parseInt(type));
 			}
+			// 2017-5-26 诚佰公司 授权对象查询条件
+			if(Strings.isNotBlank(memberIds)){
+				hql += " and v.users like :memberIds";
+				param.put("memberIds", "%" + memberIds + "%");
+			}
+			// 诚佰公司
 			if(Strings.isNotBlank(accountId2)){
 				hql += " and v.accountId=:accountId";
 				param.put("accountId", Long.parseLong(accountId2));

@@ -55,5 +55,5 @@ public interface IpcontrolManager {
 	 * @param accountId
 	 * @return List<V3xIpcontrol>
 	 */
-	public List<V3xIpcontrol> findIpcontrolBy(String name, String type, String accountId, String accountId2);
+	public List<V3xIpcontrol> findIpcontrolBy(String name, String type, String accountId, String accountId2, String memberIds);
 }
