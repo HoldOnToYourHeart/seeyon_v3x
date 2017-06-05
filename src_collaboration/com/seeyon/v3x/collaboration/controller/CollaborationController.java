@@ -626,8 +626,6 @@ public class CollaborationController extends BaseController {
                //2017-4-21 诚佰公司 附件密级 begin
                if(summary.getAttachLevel() != null){
             	    attachLevel = summary.getAttachLevel();
-   	            } else {
-   	            	attachLevel = secret; // 附件密级等于流程密级
    	            }
 	   			modelAndView.addObject("attachLevel", attachLevel);
 				//end
@@ -897,8 +895,6 @@ public class CollaborationController extends BaseController {
 			//2017-4-21 诚佰公司 附件密级 begin
             if(summary.getAttachLevel() != null){
             	attachLevel = summary.getAttachLevel();
-            } else {
-            	attachLevel = secret; // 附件密级等于流程密级
             }
    			modelAndView.addObject("attachLevel", attachLevel);
 			//end
@@ -1021,8 +1017,6 @@ public class CollaborationController extends BaseController {
 			//2017-4-21 诚佰公司 附件密级 begin
             if(summary.getAttachLevel() != null){
             	attachLevel = summary.getAttachLevel();
-            } else {
-            	attachLevel = secret; // 附件密级等于流程密级
             }
    			modelAndView.addObject("attachLevel", attachLevel);
 			//end

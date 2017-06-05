@@ -16,6 +16,7 @@ var isSubmitOperation = false;
 //var flowSecretLevel_wf = 1;
 //2017-01-11 诚佰公司
 var flowSecretLevel_wf = "";
+var isFromTemplate = false; // 是否协同模板
 
 var flowSecretLevel_track = 1;
 

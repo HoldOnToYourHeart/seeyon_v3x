@@ -44,6 +44,7 @@ import www.seeyon.com.v3x.form.utils.FormHelper;
 
 import com.seeyon.v3x.affair.manager.AffairManager;
 import com.seeyon.v3x.collaboration.Constant;
+import com.seeyon.v3x.collaboration.Constant.SecretLevel;
 import com.seeyon.v3x.collaboration.domain.ColBody;
 import com.seeyon.v3x.collaboration.domain.ColOpinion;
 import com.seeyon.v3x.collaboration.domain.ColSummary;
@@ -681,7 +682,17 @@ public class TempleteController extends BaseController {
 
             modelAndView.addObject("branchs", this.templeteManager.getBranchsByTemplateId(templete.getId(),ApplicationCategoryEnum.collaboration.ordinal()));
             
-            modelAndView.addObject("secret", summary.getSecretLevel());//2012-8-30 成发集团项目 程炯 模版修改时显示保存的密级级别
+            // 2017-5-25 诚佰公司 修改模板时密级为空时默认为内部
+            Integer secret = null;
+            if (summary.getSecretLevel() == null) {
+            	secret = SecretLevel.noSecret.ordinal();
+            } else {
+            	secret = summary.getSecretLevel();
+            }
+            modelAndView.addObject("secret", secret);
+            // 诚佰公司
+            
+            //modelAndView.addObject("secret", summary.getSecretLevel());//2012-8-30 成发集团项目 程炯 模版修改时显示保存的密级级别
 
             ColSuperviseDetail detail = colSuperviseManager.getSupervise(Constant.superviseType.template.ordinal(),templete.getId());
             if(detail != null) {

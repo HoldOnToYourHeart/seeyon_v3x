@@ -21,6 +21,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.seeyon.v3x.collaboration.Constant;
+import com.seeyon.v3x.collaboration.Constant.SecretLevel;
 import com.seeyon.v3x.collaboration.domain.ColSuperviseDetail;
 import com.seeyon.v3x.collaboration.domain.ColSupervisor;
 import com.seeyon.v3x.collaboration.domain.FlowData;
@@ -615,13 +616,23 @@ public class EdocTempleteController extends BaseController {
 	        	archiveName = docHierarchyManager.getNameById(archiveId);
 	        }
 	        //成发集团项目 程炯 2012-8-30 公文模版修改显示流程密级 begin
-	        Integer secret = null;
+	        /*Integer secret = null;
 	        if(summary.getEdocSecretLevel() != null){
 	        	secret = summary.getEdocSecretLevel();
 	        }
 	        
-	        modelAndView.addObject("secret", secret);
+	        modelAndView.addObject("secret", secret);*/
 	        //end
+	        
+	        // 2017-5-25 诚佰公司 修改模板时密级为空时默认为内部
+            Integer secret = null;
+            if (summary.getEdocSecretLevel() == null) {
+            	secret = SecretLevel.noSecret.ordinal();
+            } else {
+            	secret = summary.getEdocSecretLevel();
+            }
+            modelAndView.addObject("secret", secret);
+            // 诚佰公司
 	        
 	        modelAndView.addObject("archiveName", archiveName);
 	        

@@ -317,8 +317,6 @@ function showSystemDetail(templeteId,categoryType){
  * 保存模板
  */
 function saveTemplete() {
-	// 2017-4-27 诚佰公司
-	alert("保存模板开始调用!!!");
 	
     var theForm = document.getElementsByName("sendForm")[0];
 
