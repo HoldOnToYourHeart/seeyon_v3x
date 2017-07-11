@@ -204,11 +204,11 @@ public class AccountManagerController extends BaseController {
 				}
 			}
 			
-			member.setLoginName(name);
+//			member.setLoginName(name);
 			member.setPassword(password);
 			orgManagerDirect.updateEntity(member);
-			account.setAdminName(name);
-			orgManagerDirect.updateEntity(account);
+//			account.setAdminName(name);
+//			orgManagerDirect.updateEntity(account);
 			//切换新的帐号
 			String oldLoginName = user.getLoginName();
 			if(!oldLoginName.equalsIgnoreCase(name)){

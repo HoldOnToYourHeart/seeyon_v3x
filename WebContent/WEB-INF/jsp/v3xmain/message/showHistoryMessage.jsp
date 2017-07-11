@@ -287,14 +287,14 @@ img{
 					<fmt:message key='message.tag.systemMessage.label' /></div>
 					<div class="tab-tag-right${isSel1}"></div>
 
-				<!--174工厂  汪成平    关闭站内消息发送
+				<!--174工厂  汪成平    关闭站内消息发送 -->
 					<div class="tab-separator"></div>
 					<div class="tab-tag-left${isSel2}"></div>
 					<div class="tab-tag-middel${isSel2} cursor-hand" onClick="javascript:location.href='${mainURL}?method=showMessages&showType=1'">
 					<fmt:message key='message.tag.personMessage.label' /></div>
 					<div class="tab-tag-right${isSel2}"></div>
 					<div class="tab-separator"></div>
-				 -->	
+				 
 				</div>
 			 </td>
 		</tr>

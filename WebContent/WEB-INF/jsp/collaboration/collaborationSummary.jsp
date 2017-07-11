@@ -133,6 +133,17 @@ function beforeUnloadCheck(){
 						</td>
 					</tr>
 				</c:if>
+				<!-- 2017-5-8 诚佰公司 模板流程显示附件密级 -->
+				<c:if test="${summary.templeteId != null }">
+					<tr>
+						<td height="18" nowrap class="bg-gray detail-subject">密级 : </td>
+						<td valign="bottom">
+							<c:if test="${summary.attachLevel == null || summary.attachLevel == 1 }">内部</c:if>
+							<c:if test="${summary.attachLevel == 2 }">秘密</c:if>
+							<c:if test="${summary.attachLevel == 3 }">机密</c:if>
+						</td>
+					</tr>
+				</c:if>
 				<!-- 诚佰公司 -->
 				<tr id="attachment2Tr" style="display: none">
 					<td height="18" nowrap class="bg-gray detail-subject" valign="bottom"><fmt:message key="common.toolbar.insert.mydocument.label" bundle="${v3xCommonI18N}" /> : </td>

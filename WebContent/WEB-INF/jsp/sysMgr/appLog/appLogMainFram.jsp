@@ -108,7 +108,7 @@ function submitForm(){
 	  <form action="" method="post" name="appLogForm"  id = "appLogForm" onsubmit="" >
 	   <table width="" border="0" cellspacing="8" cellpadding="0">
 	     	<tr>
-		    <!-- <td align="right" width="10%"><fmt:message key="log.toolbar.title.category"/>: </td>
+		       <td align="right" width="10%"><fmt:message key="log.toolbar.title.category"/>: </td>
 		       <td width="10%" align="">
 					<%@ include file="modules.jsp"%>	        
 		        </td>
@@ -116,8 +116,7 @@ function submitForm(){
 		      	<td width="10%"> 	
 		        	<input type="text" readonly="readonly" class="cursor-hand"  onclick="selectPeopleFun_user()" id="personIds"  name="personIds" title="" value="">
 		       	 	<input type="hidden" name="selectPersonIds" id="selectPersonIds" value="">
-			-->
-		      	
+		       	</td>
 	       </tr>
 	    
 	     <tr>
